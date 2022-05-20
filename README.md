@@ -34,7 +34,6 @@ FIGURE-01
 
 
 
-FIGURE-02
 PROCEDURE 
  Open tinker cad account 
 1.	Select Arduino uno , bread board , digital input and digital output 
@@ -47,27 +46,46 @@ PROCEDURE
 
 
 
-
-
-
 CIRCUIT DIAGRAM 
+![EXP1](https://user-images.githubusercontent.com/78891098/169584030-884a6978-4135-4ec3-ad3d-3e0a8eabfd8f.png)
 
 
 
 
 
-![image](https://user-images.githubusercontent.com/36288975/163530437-87a0afbd-b3c9-44ad-b907-5de63486fb9d.png)
 
 
 
-FIGURE -03
+
+FIGURE -02
+![fig 2](https://user-images.githubusercontent.com/78891098/169584410-026a5a58-f213-4b2e-b847-42d7ca8ad89d.png)
 
 
 
 
 
 PROGRAM 
- 
+```c
+ const int BUTTON = 2;
+const int LED = 8;
+int BUTTONstate = 0;
+void setup()
+{
+  pinMode(BUTTON, INPUT);
+  pinMode(LED, OUTPUT);
+}
+void loop()
+{
+  BUTTONstate = digitalRead(BUTTON);
+  if(BUTTONstate == HIGH)
+  {
+    digitalWrite(LED, HIGH);
+  }
+  else{
+    digitalWrite(LED, LOW);
+  }
+}
+```
  
  
  
@@ -77,5 +95,9 @@ PROGRAM
 
 Output of the simulation :
 
-[My image](username.github.com/repository/img/image.jpg)
+![EXP1](https://user-images.githubusercontent.com/78891098/169585188-336da4a2-9087-49a2-a98b-96f85ee20bef.png)
+
+
+RESULT: Thus, we have interfaced a digital input (push button) and blink of LED upon activation.
+
 
